@@ -6,6 +6,7 @@ import { PokemonState } from '../state/reducer/pokemonReducer';
 import { useEffect, useState } from 'react';
 import { useActions } from '../hooks/useActions';
 import ModalPage from './ModalPage';
+import "./module.css"
 
 const PokemonPage: React.FC = () => {
     const { searchPokemon }  = useActions();
@@ -48,7 +49,7 @@ const PokemonPage: React.FC = () => {
         <>
         <Container className={classes.container} maxWidth={'lg'}>
         <span className={classes.logo}>PokeDex</span>
-        <Button onClick={handelBackButton} className={classes.pokemonBackBtn} >BACK</Button>
+        <Button onClick={handelBackButton} id="back-btn" className={classes.pokemonBackBtn} >BACK</Button>
          <div className={classes.pokemonHeader}>
                  <h1 className={classes.pokemonPokemon}>{state.data.name.toUpperCase()}</h1>
                  <div className={classes.pokemonTypeCards}>

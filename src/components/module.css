@@ -13,5 +13,16 @@
 }
 .search-btn:hover {
     background-color: yellow;
+}
+.search-btn:active {
+    transform: scale(0.95);
+}
 
+#back-btn {
+    background-color: #E57373;
+    font-size: 25px;
+}
+
+#back-btn:hover {
+    background-color: red;
 }

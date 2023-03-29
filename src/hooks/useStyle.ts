@@ -207,16 +207,16 @@ export const useStyle = makeStyles((theme: Theme) =>
               ].join(','),
         },
         pokemonBackBtn:{
-            fontSize: '30px',
-            backgroundColor: '#E57373',
+            // fontSize: '30px',
+            // backgroundColor: '#E57373',
             float: 'right',
             fontFamily: [
                 'Poppins',
                 'sans-serif',
               ].join(','),
-            '&:hover':{
-                backgroundColor: 'red',
-            }
+            // '&:hover':{
+            //     backgroundColor: 'red',
+            // }
         },
         pokemonPokemon:{
             float: 'right',

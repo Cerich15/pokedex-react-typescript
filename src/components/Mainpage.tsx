@@ -50,7 +50,7 @@ const Mainpage : React.FC = () => {
     
     const handleSearch = (e: React.MouseEvent<HTMLButtonElement>) =>{
         if (!name) {
-             alert ('empty field')
+            
         } else {
             searchPokemon(name);
         }
