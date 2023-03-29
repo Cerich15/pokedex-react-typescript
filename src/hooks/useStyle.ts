@@ -156,10 +156,10 @@ export const useStyle = makeStyles((theme: Theme) =>
         searchBtn: {
             position: 'absolute',
             height: '56px',
-            backgroundColor: 'yellow',
+            backgroundColor: 'pink',
             right: '0',
             '&:hover':{
-                backgroundColor: '#2C74B3'
+                backgroundColor: 'yellow'
             },
         },
         searchInput: {
