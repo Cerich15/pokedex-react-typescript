@@ -1,0 +1,9 @@
+ html {
+    background-color: #041C32;
+    background: url(../src/images/pikachu.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+}
