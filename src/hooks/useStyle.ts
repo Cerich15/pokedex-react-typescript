@@ -210,10 +210,10 @@ export const useStyle = makeStyles((theme: Theme) =>
             // fontSize: '30px',
             // backgroundColor: '#E57373',
             float: 'right',
-            fontFamily: [
-                'Poppins',
-                'sans-serif',
-              ].join(','),
+            // fontFamily: [
+            //     'Poppins',
+            //     'sans-serif',
+            //   ].join(','),
             // '&:hover':{
             //     backgroundColor: 'red',
             // }
