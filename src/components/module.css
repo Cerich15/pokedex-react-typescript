@@ -10,6 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 .search-btn:hover {
     background-color: yellow;
@@ -22,8 +23,13 @@
     background-color: #E57373;
     font-size: 25px;
     font-family: 'Poppins', sans-serif;
+    cursor: pointer;
 }
 
 #back-btn:hover {
     background-color: red;
+}
+
+.tm-logo {
+    text-decoration: none;
 }

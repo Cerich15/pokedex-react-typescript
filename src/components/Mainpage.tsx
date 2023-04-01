@@ -12,6 +12,7 @@ import axios from 'axios';
 import LoadingPage from './LoadingPage';
 import pikachuGif from "../images/loading.gif"
 import Footer from './Footer';
+import { Link } from 'react-router-dom';
 
 const Mainpage : React.FC = () => {
     const classes = useStyle();
@@ -91,7 +92,11 @@ const Mainpage : React.FC = () => {
         <>
             <Container className={classes.container} maxWidth={'lg'}>
                 <div style={{display: "flex", flexDirection: "row"}}>
-                  <span className={classes.logo}>PokeDex</span>
+                    <Link className='tm-logo' to='/'>
+                        <span className={classes.logo}>
+                            PokeDex
+                        </span>
+                   </Link>
                   <img src={pikachuGif} alt='' style={{width: "40px", height: "40px"}}/>
                 </div>
                 <Searchbar name={name} handleChange={handleChange} handleSearch={handleSearch}/>

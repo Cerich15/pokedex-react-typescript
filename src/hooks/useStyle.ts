@@ -180,9 +180,10 @@ export const useStyle = makeStyles((theme: Theme) =>
         },
         buttons: {
             margin: 'auto',
-            borderRadius: '100px',
+            // borderRadius: '100px',
             width: '100px',
             height: '50px',
+            border: "1.5px solid",
         },
         modalContainer:{
             backgroundColor: 'rgba(0,0,0,0.2)',
@@ -209,7 +210,7 @@ export const useStyle = makeStyles((theme: Theme) =>
         pokemonBackBtn:{
             // fontSize: '30px',
             // backgroundColor: '#E57373',
-            float: 'right',
+            // float: 'right',
             // fontFamily: [
             //     'Poppins',
             //     'sans-serif',

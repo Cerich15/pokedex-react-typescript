@@ -7,10 +7,12 @@ import { useEffect, useState } from 'react';
 import { useActions } from '../hooks/useActions';
 import ModalPage from './ModalPage';
 import "./module.css"
+import { Link } from 'react-router-dom';
+import pikachuGif from "../images/loading.gif"
 
 const PokemonPage: React.FC = () => {
     const { searchPokemon }  = useActions();
-    const classes = useStyle();
+    const classes : any = useStyle();
     const state : PokemonState = useTypedSelector((state)=> state.pokemon);
     const [openModal, setOpenModal] = useState<boolean>(false);
     const [abilityUrl, setAbilityUrl] = useState<string>('');
@@ -45,54 +47,48 @@ const PokemonPage: React.FC = () => {
         }
          // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
+
+    type classTypeProps = {
+        name: string;
+    }
+
+    const pokemonTypes = ['grass', 'fire', 'water', 'poison', 'ground', 'rock', 'steel', 'ice', 'electric', 'dragon', 'ghost', 'psychic', 'fighting', 'bug', 'flying', 'dark', 'fairy', 'normal']
+
+    const getClassType = (types: classTypeProps) => {
+        const selectedTypes = {name: ''}
+        pokemonTypes.map(p => types.name === p &&
+            Object.assign(selectedTypes , {name:(`pokemonTypeCard${types.name.charAt(0).toUpperCase() + types.name.substring(1)}`)}))
+        
+        return selectedTypes.name && selectedTypes.name
+    }
+    
     return (
         <>
         <Container className={classes.container} maxWidth={'lg'}>
-        <span className={classes.logo}>PokeDex</span>
-        <Button onClick={handelBackButton} id="back-btn" className={classes.pokemonBackBtn} >BACK</Button>
+        <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
+            <div>
+                <Link className='tm-logo' to='/'>
+                    <span className={classes.logo}>
+                        PokeDex
+                    </span>
+                </Link>
+                <img src={pikachuGif} alt='' style={{width: "40px", height: "40px"}}/>
+            </div>
+            <Button onClick={handelBackButton} id="back-btn" className={classes.pokemonBackBtn} >BACK</Button>
+        </div>
+        
          <div className={classes.pokemonHeader}>
                  <h1 className={classes.pokemonPokemon}>{state.data.name.toUpperCase()}</h1>
                  <div className={classes.pokemonTypeCards}>
                      {
                          state.data.types.map((type) =>{ 
                              return(
+                                
                                  <div key={type.slot} className={
-                                     type.type.name === 'grass'? 
-                                     classes.pokemonTypeCardGrass : 
-                                     type.type.name === 'poison'? 
-                                     classes.pokemonTypeCardPoison : 
-                                     type.type.name === 'water'? 
-                                     classes.pokemonTypeCardWater : 
-                                     type.type.name === 'fire'? 
-                                     classes.pokemonTypeCardFire : 
-                                     type.type.name === 'ground'? 
-                                     classes.pokemonTypeCardGround : 
-                                     type.type.name === 'rock'? 
-                                     classes.pokemonTypeCardRock : 
-                                     type.type.name === 'steel'? 
-                                     classes.pokemonTypeCardSteel : 
-                                     type.type.name === 'ice'? 
-                                     classes.pokemonTypeCardIce : 
-                                     type.type.name === 'electric'? 
-                                     classes.pokemonTypeCardElectric : 
-                                     type.type.name === 'dragon'? 
-                                     classes.pokemonTypeCardDragon : 
-                                     type.type.name === 'ghost'? 
-                                     classes.pokemonTypeCardGhost : 
-                                     type.type.name === 'psychic'? 
-                                     classes.pokemonTypeCardPsychic : 
-                                     type.type.name === 'fighting'? 
-                                     classes.pokemonTypeCardFighting : 
-                                     type.type.name === 'bug'? 
-                                     classes.pokemonTypeCardBug : 
-                                     type.type.name === 'flying'? 
-                                     classes.pokemonTypeCardFlying : 
-                                     type.type.name === 'dark'? 
-                                     classes.pokemonTypeCardDark : 
-                                     type.type.name === 'fairy'? 
-                                     classes.pokemonTypeCardWater : 
-                                     classes.pokemonTypeCardNormal}>
+                                    classes[getClassType(type.type)]
+                                }>
                                      <h3>{type.type.name.toUpperCase()}</h3>
+                                     {console.log(getClassType(type.type), "<<<<<here")}
                                  </div>
                              )
                          })
